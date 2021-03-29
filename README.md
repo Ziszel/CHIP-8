@@ -43,3 +43,5 @@ http://www.codeslinger.co.uk/files/emu.pdf — Victor Moya del Barrio, 2001.
 https://www.raylib.com/cheatsheet/cheatsheet.html
 
 https://github.com/RobLoach/raylib-cpp
+
+https://raylibtech.itch.io/rfxgen — Used to create the sound effect. 
