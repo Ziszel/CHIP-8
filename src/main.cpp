@@ -5,6 +5,7 @@
 
 typedef uint8_t BYTE;
 
+// I should make this cleaner; perhaps a switch statement? Break out into another file
 void updateInput(std::array<BYTE, 16> &keys)
 {
     if (IsKeyDown(KEY_ONE))
@@ -161,6 +162,10 @@ int main(void)
     const int drawingScale = 10;
 
     InitWindow(screenWidth, screenHeight, "CHIP-8 Emulator | C++ with Raylib");
+    InitAudioDevice();
+
+    Sound beep = LoadSound("res/beep.wav");
+
     SetWindowPosition(800, 800);
 
     // setup objects
@@ -186,7 +191,7 @@ int main(void)
                                  0};
 
     // high but makes games more playable.
-    const float fps = 120.0f;
+    const float fps = 60.0f;
 
     SetTargetFPS(fps);
 
@@ -201,10 +206,18 @@ int main(void)
         // update timers
         if (cpu->DT > 0)
         {
+            if (!IsSoundPlaying(beep))
+            {
+                PlaySound(beep);
+            }
             cpu->DT--;
         }
         if (cpu->ST > 0)
         {
+            if (!IsSoundPlaying(beep))
+            {
+                PlaySound(beep);
+            }
             cpu->ST--;
         }
 
@@ -230,6 +243,9 @@ int main(void)
         EndDrawing();
     }
 
+    UnloadSound(beep);
+
+    CloseAudioDevice();
     CloseWindow();
     return 0;
 }
