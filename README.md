@@ -3,12 +3,14 @@
 This is a complete CHIP-8 interperator created as per the specification located
 here: https://en.wikipedia.org/wiki/CHIP-8.
 
-It has been created in C++ with Raylib and is verified to work on Linux.
+![Space Invaders](res/docs/space-invaders.png)
+
+It has been created in C++ with Raylib and is verified to work on Linux.  
 You will need to install the following in order to build the program:
 
-https://github.com/RobLoach/raylib-cpp (cpp raylib bindings / Rob Loach)
-https://github.com/raysan5/raylib (cpp raylib is a header-only library; must be linked to raylib)
-https://gcc.gnu.org/ (Tested with version 8.3.0).
+- https://github.com/RobLoach/raylib-cpp (cpp raylib bindings / Rob Loach)  
+- https://github.com/raysan5/raylib (cpp raylib is a header-only library; must be linked to raylib)  
+- https://gcc.gnu.org/ (Tested with version 8.3.0)  
 
 ## How to build
 
