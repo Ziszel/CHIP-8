@@ -297,8 +297,6 @@ void opcodeFX29(WORD opcode, Cpu &cpu, int regX)
 {
 
     // sets I to the location of the sprite for the character in VX
-
-    // TODO: research this
     cpu.I = cpu.registers[regX] * 5;
 }
 
